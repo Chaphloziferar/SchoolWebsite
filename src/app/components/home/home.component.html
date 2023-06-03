@@ -1,0 +1,17 @@
+<section>
+  <h2>Noticias Generales</h2>
+  <div class="card-container">
+    <div *ngFor="let noticia of noticias" class="card">
+      <div class="card-header">
+        <h3>{{ noticia.titulo }}</h3>
+      </div>
+      <div class="card-body">
+        <p>{{ noticia.contenido }}</p>
+      </div>
+      <div class="card-footer">
+        <p class="fecha">{{ noticia.fecha | date }}</p>
+        <p class="autor">{{ noticia.autor }}</p>
+      </div>
+    </div>
+  </div>
+</section>
