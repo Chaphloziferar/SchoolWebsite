@@ -1,6 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+// Redux
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { appReducers } from './app.reducers';
+
+// Effects
+import { UserEffect } from './effects/user.effects';
+import { TeacherEffect } from './effects/teacher.effects';
+import { StudentEffect } from './effects/student.effects';
+import { ClassEffect } from './effects/class.effects';
+import { EnrollmentEffect } from './effects/enrollment.effects';
+import { GradeEffect } from './effects/grade.effects';
+import { EvaluationEffect } from './effects/evaluation.effects';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -22,9 +37,25 @@ import { AdministrationComponent } from './components/administration/administrat
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot(),
+    EffectsModule.forFeature([
+      UserEffect,
+      TeacherEffect,
+      StudentEffect,
+      ClassEffect,
+      EnrollmentEffect,
+      GradeEffect,
+      EvaluationEffect
+    ]),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25
+    })
   ],
-  providers: [],
+  providers: [
+    UserEffect
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
