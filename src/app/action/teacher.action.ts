@@ -25,7 +25,7 @@ export const loadTeachersActionFailure = createAction(
     }>()
 );
 
-export const listUserActions = {
+export const listTeacherActions = {
     loadTeachersAction,
     loadTeachersActionSuccess,
     loadTeachersActionFailure

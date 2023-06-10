@@ -23,7 +23,7 @@ export const getError = createSelector(
     (state: ClassState) => state.error
 )
 
-export const userSelectors = {
+export const classSelectors = {
     getEvaluations,
     getLoading,
     getError

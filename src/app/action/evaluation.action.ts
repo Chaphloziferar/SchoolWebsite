@@ -25,7 +25,7 @@ export const loadEvaluationsActionFailure = createAction(
     }>()
 );
 
-export const listUserActions = {
+export const listEvaluationActions = {
     loadEvaluationsAction,
     loadEvaluationsActionSuccess,
     loadEvaluationsActionFailure
