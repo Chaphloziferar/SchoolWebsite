@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 // Redux
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -26,6 +27,7 @@ import { NotesComponent } from './components/notes/notes.component';
 import { AdministrationComponent } from './components/administration/administration.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
+import { StudentDetailsComponent } from './components/student-details/student-details.component';
 
 @NgModule({
   declarations: [
@@ -37,11 +39,13 @@ import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.
     NotesComponent,
     AdministrationComponent,
     FooterComponent,
-    ConfirmModalComponent
+    ConfirmModalComponent,
+    StudentDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     StoreModule.forRoot(appReducers),
     EffectsModule.forRoot(),
     EffectsModule.forFeature([

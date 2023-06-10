@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -24,7 +25,8 @@ export class StudentsComponent {
   isSelectedStudent: boolean = false;
 
   constructor(
-    private store$: Store<AppState>
+    private store$: Store<AppState>,
+    private router: Router
   ){
     this.store$.dispatch(listStudentActions.loadStudentsAction());
 
@@ -61,12 +63,12 @@ export class StudentsComponent {
 
   editStudent() {
     this.store$.dispatch(listStudentActions.setModificationTypeAction({modificationType: 'edit'}));
-    this.store$.dispatch(listStudentActions.showModalAction({showModal: true}));
+    this.router.navigate(['/student-details']);
   }
 
   addStudent() {
     this.store$.dispatch(listStudentActions.setModificationTypeAction({modificationType: 'create'}));
-    this.store$.dispatch(listStudentActions.showModalAction({showModal: true}));
+    this.router.navigate(['/student-details']);
   }
 
   viewNotes() {

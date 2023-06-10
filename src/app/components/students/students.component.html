@@ -7,8 +7,8 @@
 <div class="button-container">
   <button [ngClass]="{'button-delete': isSelectedStudent}" [disabled]="!isSelectedStudent" (click)="deleteStudent()">Eliminar</button>
   <button [ngClass]="{'button-edit': isSelectedStudent}" [disabled]="!isSelectedStudent" (click)="editStudent()">Editar</button>
-  <button [ngClass]="{'button-general': isSelectedStudent}" [disabled]="!isSelectedStudent" (click)="addStudent()">Agregar</button>
-  <button [ngClass]="{'button-general': isSelectedStudent}" [disabled]="!isSelectedStudent" (click)="viewNotes()">Ver Notas</button>
+  <button class="button-general"  (click)="addStudent()">Agregar</button>
+  <!--<button [ngClass]="{'button-general': isSelectedStudent}" [disabled]="!isSelectedStudent" (click)="viewNotes()">Ver Notas</button>-->
 </div>
 
 <table class="table">

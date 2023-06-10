@@ -1,0 +1,59 @@
+.agregar-usuario-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.agregar-usuario-container h2 {
+  margin-top: 0;
+}
+
+.agregar-usuario-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.agregar-usuario-container input[type="text"],
+.agregar-usuario-container input[type="date"],
+.agregar-usuario-container input[type="email"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.agregar-usuario-container button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.agregar-usuario-container button[type="submit"] {
+  background-color: #4CAF50;
+}
+
+.agregar-usuario-container button[type="button"] {
+  background-color: #ccc;
+  margin-left: 10px;
+}
+
+.agregar-usuario-container button:hover {
+  background-color: #45a049;
+}
+
+.agregar-usuario-container button:active {
+  background-color: #3e8e41;
+}
+
+.agregar-usuario-container button:focus {
+  outline: none;
+}

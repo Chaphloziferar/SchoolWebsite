@@ -68,7 +68,7 @@ export class StudentsService {
                 'Access-Control-Allow-Origin': '*'
             }
         }
-        
+
         const res = await fetch('http://johncanales-001-site1.dtempurl.com/api/students/' + studentId + `?deletedDate=${currentDateString}`, options);
         let data = await res.json();
 
