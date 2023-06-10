@@ -28,8 +28,6 @@ export class TeachersComponent {
 
     this.teachers$.subscribe(teachers => {
       this.teachers = teachers;
-      console.log(teachers);
-      
     })
   }
 }

@@ -32,4 +32,61 @@ export class StudentEffect {
             })
         )
     )
+
+    addStudentRequestEffect$ = createEffect<any, any, any, any>(
+        () => this.action$.pipe(
+            ofType(studentActions.addStudentAction),
+            switchMap(action => {
+                return this.studentService.addStudent(action.student).then(res => {
+                    if(res) {
+                        let student = res;
+                        let data = studentActions.addStudentActionSuccess({student});
+                        return data;
+                    } else {
+                        return studentActions.addStudentActionFailure({error: 'Internal Server Error'});
+                    }
+                }).catch(error => {
+                    return studentActions.addStudentActionFailure(error);
+                })
+            })
+        )
+    )
+
+    editStudentRequestEffect$ = createEffect<any, any, any, any>(
+        () => this.action$.pipe(
+            ofType(studentActions.editStudentAction),
+            switchMap(action => {
+                return this.studentService.editStudent(action.student).then(res => {
+                    if(res) {
+                        let student = res;
+                        let data = studentActions.editStudentActionSuccess({student});
+                        return data;
+                    } else {
+                        return studentActions.editStudentActionFailure({error: 'Internal Server Error'});
+                    }
+                }).catch(error => {
+                    return studentActions.editStudentActionFailure(error);
+                })
+            })
+        )
+    )
+
+    deleteStudentRequestEffect$ = createEffect<any, any, any, any>(
+        () => this.action$.pipe(
+            ofType(studentActions.deleteStudentAction),
+            switchMap(action => {
+                return this.studentService.deleteStudent(action.studentId).then(res => {
+                    if(res) {
+                        let student = res;
+                        let data = studentActions.deleteStudentActionSuccess({student});
+                        return data;
+                    } else {
+                        return studentActions.deleteStudentActionFailure({error: 'Internal Server Error'});
+                    }
+                }).catch(error => {
+                    return studentActions.deleteStudentActionFailure(error);
+                })
+            })
+        )
+    )
 }

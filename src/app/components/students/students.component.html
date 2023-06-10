@@ -1,11 +1,35 @@
-<p>students works!</p>
+<header class="header">
+  <h1 class="title">Listado de Estudiantes</h1>
+</header>
 
-<ul>
-    <li *ngFor="let user of users">
-        <p>{{user.userId}}</p>
-        <p>{{user.username}}</p>
-        <p>{{user.password}}</p>
-        <p>{{user.userType}}</p>
-        <p>{{user.deletedDate}}</p>
-    </li>
-</ul>
+<div class="button-container">
+  <button [ngClass]="{'button-delete': isSelectedStudent}" [disabled]="!isSelectedStudent" (click)="deleteStudent()">Eliminar</button>
+  <button [ngClass]="{'button-edit': isSelectedStudent}" [disabled]="!isSelectedStudent" (click)="editStudent()">Editar</button>
+  <button [ngClass]="{'button-general': isSelectedStudent}" [disabled]="!isSelectedStudent" (click)="addStudent()">Agregar</button>
+  <button [ngClass]="{'button-general': isSelectedStudent}" [disabled]="!isSelectedStudent" (click)="viewNotes()">Ver Notas</button>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Fecha de Nacimiento</th>
+      <th>Dirección</th>
+      <th>Teléfono</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students" (click)="highlightRow($event.target, student)">
+      <td>{{ student.studentId }}</td>
+      <td>{{ student.firstName }}</td>
+      <td>{{ student.lastName }}</td>
+      <td>{{ student.dateOfBirth | date }}</td>
+      <td>{{ student.address }}</td>
+      <td>{{ student.phoneNumber }}</td>
+      <td>{{ student.email }}</td>
+    </tr>
+  </tbody>
+</table>

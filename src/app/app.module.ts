@@ -24,6 +24,7 @@ import { StudentsComponent } from './components/students/students.component';
 import { TeachersComponent } from './components/teachers/teachers.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { AdministrationComponent } from './components/administration/administration.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AdministrationComponent } from './components/administration/administrat
     StudentsComponent,
     TeachersComponent,
     NotesComponent,
-    AdministrationComponent
+    AdministrationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

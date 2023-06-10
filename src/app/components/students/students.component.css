@@ -1,0 +1,103 @@
+.header {
+  background-color: #337ab7;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.table th {
+  background-color: #f2f2f2;
+}
+
+.table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.table tbody tr.highlighted {
+  background-color: yellow;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button-container button {
+  padding: 10px 20px;
+  background-color: #686868;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button-general {
+  background-color: #4c65af !important;
+}
+
+.button-edit {
+  background-color: #4CAF50 !important;
+}
+
+.button-delete {
+  background-color: #af4c4c !important;
+}
+
+.button-general:hover {
+  background-color: #455aa0 !important;
+}
+
+.button-edit:hover {
+  background-color: #45a049 !important;
+}
+
+.button-delete:hover {
+  background-color: #a04545 !important;
+}
+
+.button-container button:not(:last-child) {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .table td,
+  .table th {
+    display: block;
+    text-align: center;
+  }
+
+  .table td:before,
+  .table th:before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .table td:last-child,
+  .table th:last-child {
+    border-bottom: none;
+  }
+}

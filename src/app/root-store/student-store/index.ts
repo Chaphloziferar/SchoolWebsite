@@ -13,6 +13,11 @@ export const getStudents = createSelector(
     (state: StudentState) => state.students
 )
 
+export const getSelectedStudent = createSelector(
+    StudentFeature,
+    (state: StudentState) => state.selectedStudent
+)
+
 export const getLoading = createSelector(
     StudentFeature,
     (state: StudentState) => state.isLoading
@@ -25,6 +30,7 @@ export const getError = createSelector(
 
 export const studentSelectors = {
     getStudents,
+    getSelectedStudent,
     getLoading,
     getError
 }

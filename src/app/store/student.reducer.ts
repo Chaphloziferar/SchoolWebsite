@@ -20,5 +20,17 @@ export const studentReducer = createReducer(
         ...state,
         isLoading: false,
         error: error
+    })),
+
+    on(fromStudent.selectStudentAction, (state, {student}) => ({
+        ...state,
+        isLoading: false,
+        selectedStudent: student
+    })),
+
+    on(fromStudent.selectStudentActionFailure, (state, {error}) => ({
+        ...state,
+        isLoading: false,
+        error: error
     }))
 )
