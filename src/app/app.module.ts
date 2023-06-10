@@ -25,6 +25,7 @@ import { TeachersComponent } from './components/teachers/teachers.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { AdministrationComponent } from './components/administration/administration.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FooterComponent } from './components/footer/footer.component';
     TeachersComponent,
     NotesComponent,
     AdministrationComponent,
-    FooterComponent
+    FooterComponent,
+    ConfirmModalComponent
   ],
   imports: [
     BrowserModule,

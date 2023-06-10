@@ -55,17 +55,18 @@ export class StudentsComponent {
   }
 
   deleteStudent() {
-    if(this.selectedStudent) {
-      this.store$.dispatch(listStudentActions.deleteStudentAction({studentId: this.selectedStudent.studentId}));
-    }
+    this.store$.dispatch(listStudentActions.setModificationTypeAction({modificationType: 'delete'}));
+    this.store$.dispatch(listStudentActions.showModalAction({showModal: true}));
   }
 
   editStudent() {
-    console.log('enable')
+    this.store$.dispatch(listStudentActions.setModificationTypeAction({modificationType: 'edit'}));
+    this.store$.dispatch(listStudentActions.showModalAction({showModal: true}));
   }
 
   addStudent() {
-    console.log('enable')
+    this.store$.dispatch(listStudentActions.setModificationTypeAction({modificationType: 'create'}));
+    this.store$.dispatch(listStudentActions.showModalAction({showModal: true}));
   }
 
   viewNotes() {

@@ -1,0 +1,17 @@
+<div class="confirmation-modal" *ngIf="showModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Confirmación</h4>
+      <button type="button" class="close" aria-label="Close" (click)="closeConfirmationModal()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>¿Estás seguro de que deseas {{modificationType}} este elemento?</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" (click)="confirm()">Aceptar</button>
+      <button type="button" class="btn btn-secondary" (click)="decline()">Cancelar</button>
+    </div>
+  </div>
+</div>

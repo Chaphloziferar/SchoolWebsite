@@ -32,5 +32,23 @@ export const studentReducer = createReducer(
         ...state,
         isLoading: false,
         error: error
-    }))
+    })),
+
+    on(fromStudent.setModificationTypeAction, (state, {modificationType}) => ({
+        ...state,
+        isLoading: false,
+        modificationType: modificationType
+    })),
+
+    on(fromStudent.setModificationTypeActionFailure, (state, {error}) => ({
+        ...state,
+        isLoading: false,
+        error: error
+    })),
+
+    on(fromStudent.showModalAction, (state, {showModal}) => ({
+        ...state,
+        isLoading: false,
+        showModal: showModal
+    })),
 )

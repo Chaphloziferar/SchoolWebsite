@@ -19,7 +19,12 @@ export enum ActionTypes {
 
     DELETE_STUDENT = 'Delete Students',
     DELETE_STUDENT_SUCCESS = 'Delete Students Success',
-    DELETE_STUDENT_FAILURE = 'Delete Students Failure'
+    DELETE_STUDENT_FAILURE = 'Delete Students Failure',
+
+    SET_MODIFICATION_TYPE = 'Set Modification Type',
+    SET_MODIFICATION_TYPE_FAILURE = 'Set Modification Type Failure',
+
+    SHOW_MODAL = "Show Modal",
 }
 
 export const loadStudentsAction = createAction(
@@ -117,6 +122,27 @@ export const deleteStudentActionFailure = createAction(
     }>()
 );
 
+export const setModificationTypeAction = createAction(
+    ActionTypes.SET_MODIFICATION_TYPE,
+    props<{
+        modificationType: "create" | "edit" | "delete";
+    }>()
+);
+
+export const setModificationTypeActionFailure = createAction(
+    ActionTypes.SET_MODIFICATION_TYPE_FAILURE,
+    props<{
+        error: String
+    }>()
+);
+
+export const showModalAction = createAction(
+    ActionTypes.SHOW_MODAL,
+    props<{
+        showModal: boolean
+    }>()
+);
+
 export const listStudentActions = {
     loadStudentsAction,
     loadStudentsActionSuccess,
@@ -131,5 +157,8 @@ export const listStudentActions = {
     editStudentActionFailure,
     deleteStudentAction,
     deleteStudentActionSuccess,
-    deleteStudentActionFailure
+    deleteStudentActionFailure,
+    setModificationTypeAction,
+    setModificationTypeActionFailure,
+    showModalAction
 }

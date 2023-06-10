@@ -28,9 +28,21 @@ export const getError = createSelector(
     (state: StudentState) => state.error
 )
 
+export const getModificationType = createSelector(
+    StudentFeature,
+    (state: StudentState) => state.modificationType
+)
+
+export const getShowModal = createSelector(
+    StudentFeature,
+    (state: StudentState) => state.showModal
+);
+
 export const studentSelectors = {
     getStudents,
     getSelectedStudent,
     getLoading,
-    getError
+    getError,
+    getModificationType,
+    getShowModal
 }

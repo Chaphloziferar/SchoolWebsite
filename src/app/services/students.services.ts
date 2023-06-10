@@ -58,6 +58,8 @@ export class StudentsService {
     }
 
     async deleteStudent(studentId: number) {
+        const currentDateString = new Date().toISOString();
+
         const options: RequestInit = {
             method: 'DELETE',
             headers: {
@@ -66,8 +68,8 @@ export class StudentsService {
                 'Access-Control-Allow-Origin': '*'
             }
         }
-
-        const res = await fetch('http://johncanales-001-site1.dtempurl.com/api/students/' + studentId, options);
+        
+        const res = await fetch('http://johncanales-001-site1.dtempurl.com/api/students/' + studentId + `?deletedDate=${currentDateString}`, options);
         let data = await res.json();
 
         return data;
